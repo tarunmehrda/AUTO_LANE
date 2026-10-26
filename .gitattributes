@@ -1,0 +1,15 @@
+# Set default behavior to automatically normalize line endings
+* text=auto
+
+# Explicitly declare binary files to prevent CRLF corruption
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.mp4 binary
+*.avi binary
+*.zip binary
+*.bit binary
+*.hwh binary
+*.hex binary
+*.pyc binary

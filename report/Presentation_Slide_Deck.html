@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Presentation Slide Deck — UIET Panjab University</title>
+    
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0f172a;
+            color: #f8fafc;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .slide-nav {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            background: #1e293b;
+            padding: 12px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 100;
+        }
+        .nav-title {
+            font-size: 14pt;
+            font-weight: bold;
+            color: #38bdf8;
+        }
+        .nav-controls button {
+            background: #38bdf8;
+            color: #0f172a;
+            border: none;
+            font-weight: bold;
+            padding: 8px 16px;
+            margin-left: 8px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .nav-controls button:hover {
+            background: #7dd3fc;
+        }
+        .slide {
+            width: 90%;
+            max-width: 1100px;
+            min-height: 650px;
+            background: #1e293b;
+            margin: 30px 0;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            border: 1px solid #334155;
+            padding: 40px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+        .slide-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 10pt;
+            color: #94a3b8;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .slide-content h2 {
+            color: #38bdf8;
+            font-size: 20pt;
+            margin-top: 0;
+        }
+        .slide-content h3 {
+            color: #f59e0b;
+            font-size: 14pt;
+            margin-top: 20px;
+        }
+        .slide-content ul {
+            font-size: 12pt;
+            line-height: 1.7;
+        }
+        .slide-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .slide-content th, .slide-content td {
+            border: 1px solid #475569;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        .slide-content th {
+            background: #0ea5e9;
+            color: #0f172a;
+        }
+        .slide-content pre {
+            background: #0f172a;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #38bdf8;
+            font-size: 10pt;
+            color: #e2e8f0;
+            overflow-x: auto;
+        }
+        blockquote {
+            background: rgba(56, 189, 248, 0.1);
+            border-left: 4px solid #38bdf8;
+            margin: 15px 0;
+            padding: 12px 18px;
+            font-style: italic;
+            color: #bae6fd;
+            border-radius: 0 4px 4px 0;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="slide-nav">
+        <span class="nav-title">FPGA-Accelerated Lane Detection — B.E. Capstone Defense</span>
+        <div class="nav-controls">
+            <button onclick="window.print()">🖨️ Print Slides</button>
+        </div>
+    </div>
+    
+        <div class="slide" id="slide-1">
+            <div class="slide-header">
+                <span>UIET, Panjab University — Major Project Defense</span>
+                <span>Slide 1 of 16</span>
+            </div>
+            <div class="slide-content">
+                <h2>SLIDE 1: TITLE &amp; PROJECT OVERVIEW</h2>
+<h3>Visual Layout:</h3>
+<ul>
+<li>University Emblem &amp; Department Title at top.</li>
+<li>Project Title centered with bold accent.</li>
+<li>Team credentials and supervisor details.</li>
+<li>Graphic representation of the PYNQ-Z2 SoC interfacing with a forward vehicular camera.</li>
+</ul>
+<h3>Core Bullet Points:</h3>
+<ul>
+<li><strong>Domain</strong>: Embedded Computer Vision &amp; Automotive Safety (ADAS / Autonomous Vehicles).</li>
+<li><strong>Target Hardware Platform</strong>: AMD Xilinx PYNQ-Z2 (Zynq-7000 SoC <code>XC7Z020-1CLG400C</code>).</li>
+<li><strong>Core Innovation</strong>:</li>
+<li>Asymmetric PS-PL Heterogeneous Co-Design (100 MHz streaming hardware accelerator).</li>
+<li>Per-frame Marking Quality Metric ($Q \in [0, 1]$).</li>
+<li>Closed-loop IIR dynamic hardware threshold feedback ($T_{\text{ctrl}} \in [25, 95]$).</li>
+<li>Texture-based Virtual-Lane Fallback for unpainted rural roads.</li>
+<li>Multi-stripe Speed-Breaker Warning reusing horizontal Sobel gradients.</li>
+</ul>
+<h3>Speaker Notes (What to say):</h3>
+<blockquote>
+<p>"Respected members of the examination committee and our project guide, Dr. Arvind Kumar, good morning. Today, Sarthak and I are proud to present our final B.E. capstone project: an FPGA-accelerated embedded vision pipeline specifically engineered to overcome the acute environmental challenges of Indian roadways. Unlike conventional lane detectors that assume pristine European highways, our system couples high-speed hardware acceleration on the PYNQ-Z2 FPGA with dynamic confidence feedback, unpainted road fallback, and speed-breaker mitigation."</p>
+</blockquote>
+<hr />
+            </div>
+        </div>
+        
+
+        <div class="slide" id="slide-2">
+            <div class="slide-header">
+                <span>UIET, Panjab University — Major Project Defense</span>
+                <span>Slide 2 of 16</span>
+            </div>
+            <div class="slide-content">
+                <h2>SLIDE 2: THE PROBLEM STATEMENT: WHY DO STANDARD ADAS FAIL IN INDIA?</h2>
+<h3>Visual Layout:</h3>
+<ul>
+<li>4-quadrant photo montage illustrating Indian road non-idealities:</li>
+<li>Faded paint under blistering sun;</li>
+<li>Harsh diagonal tree-canopy shadows and glare;</li>
+<li>Rural unpainted asphalt with gravel shoulders;</li>
+<li>Unmarked speed breakers without paint.</li>
+</ul>
+<h3>Core Bullet Points:</h3>
+<ul>
+<li><strong>The Indian Road Dilemma</strong>:</li>
+<li>Over $11\%$ of global road fatalities occur in India, predominantly due to unintended lane departure and road hazards.</li>
+<li>Commercial ADAS suites (Mobileye, Tesla Autopilot) fail or disengage on non-standardized Indian roads.</li>
+<li><strong>Key Vulnerabilities of Existing Systems</strong>:</li>
+<li><strong>Fixed Threshold Blindness</strong>: Static edge filters ($T=50$) either starve on faded markings or flood the system with noise under canopy shadows.</li>
+<li><strong>The "Unmarked Road" Deadlock</strong>: Classical detectors assume white lines; on rural unpainted roads, they suffer $100\%$ tracking collapse.</li>
+<li><strong>The Speed-Breaker Hazard</strong>: Unannounced humps cause catastrophic suspension failure and rollover crashes.</li>
+<li><strong>Embedded Power Limits</strong>: Embedded GPUs (NVIDIA Jetson) consume $15\text{--}40\text{ W}$, too hot and costly for mass-market Indian two-wheelers and economy cars.</li>
+</ul>
+<h3>Speaker Notes:</h3>
+<blockquote>
+<p>"To understand our motivation, consider this reality: standard vision algorithms assume high-contrast, standardized white paint on smooth black asphalt. In India, over 60% of rural and state highways lack any lane markings. Furthermore, harsh sunlight creates shadows with edge gradients stronger than faded paint, and unannounced speed breakers cause severe accidents. Running a power-hungry 30-watt GPU in a sealed automotive dashboard is impractical. We needed an ultra-low-power, deterministic, and adaptive embedded solution."</p>
+</blockquote>
+<hr />
+            </div>
+        </div>
+        
+
+        <div class="slide" id="slide-3">
+            <div class="slide-header">
+                <span>UIET, Panjab University — Major Project Defense</span>
+                <span>Slide 3 of 16</span>
+            </div>
+            <div class="slide-content">
+                <h2>SLIDE 3: HARDWARE / SOFTWARE (PS-PL) CO-DESIGN ARCHITECTURE</h2>
+<h3>Visual Layout:</h3>
+<ul>
+<li>Block diagram illustrating the asymmetric boundary between the Zynq Processing System (PS) and Programmable Logic (PL).</li>
+<li>Arrows showing AXI4-Stream for high-speed pixels and AXI4-Lite for register feedback.</li>
+</ul>
+<pre><code>+-----------------------------------------------------------------------------------------+
+|                              PYNQ-Z2 SYSTEM-ON-CHIP (XC7Z020)                           |
+|                                                                                         |
+|    +-----------------------------+                  +------------------------------+    |
+|    |    PROCESSING SYSTEM (PS)   |                  |   PROGRAMMABLE LOGIC (PL)    |    |
+|    |    Dual ARM Cortex-A9       |                  |   Hardware Accelerator       |    |
+|    |                             |                  |                              |    |
+|    |  - 9-Window Histogram Fit   |                  |  - AXI4-Stream RGB-to-Gray   |    |
+|    |  - Confidence Engine (Q)    |   AXI4-Lite      |  - Dual-Line BRAM Stencil    |    |
+|    |  - Closed-Loop Controller   +---------------------&gt; Multiplierless Sobel      |    |
+|    |  - Virtual-Lane Fallback    | (Threshold Ctrl) |  - Dynamic Binarizer         |    |
+|    |  - Speed-Breaker Analyzer   |                  |                              |    |
+|    |  - HUD &amp; Steering Commands  |   AXI DMA HP0    |                              |    |
+|    |                             &lt;---------------------+ Streaming Edge Output     |    |
+|    +-----------------------------+  (Memory Stream) +------------------------------+    |
++-----------------------------------------------------------------------------------------+
+</code></pre>
+<h3>Core Bullet Points:</h3>
+<ul>
+<li><strong>Asymmetric PS-PL Partitioning</strong>:</li>
+<li><strong>PL (FPGA Fabric @ 100 MHz)</strong>: Accelerates repetitive, data-parallel, pixel-rate operations (RGB2Gray, 2-line buffering, 3x3 Sobel convolution, threshold binarization).</li>
+<li><strong>PS (Dual ARM Cortex-A9 @ 650 MHz)</strong>: Executes complex decision logic, polynomial regression ($x = ay^2 + by + c$), HSV road texture modeling, and supervisory control.</li>
+<li><strong>Interconnect Topologies</strong>:</li>
+<li><strong>AXI4-Stream</strong>: Point-to-point, addressless video dataflow over AXI DMA (HP0 port).</li>
+<li><strong>AXI4-Lite</strong>: Low-latency memory-mapped control bus (<code>0x43C00010</code>) allowing runtime threshold updates.</li>
+</ul>
+<h3>Speaker Notes:</h3>
+<blockquote>
+<p>"Rather than implementing the entire system in software or trying to force complex non-linear curve fitting onto FPGA gates, we adopted an asymmetric hardware/software co-design. Repetitive low-level pixel crunching is offloaded to the FPGA fabric at 100 MHz, while higher-order geometric cognition and control decisions run on the dual ARM Cortex-A9 processor. The two communicate via high-speed AXI DMA and an AXI-Lite register interface."</p>
+</blockquote>
+<hr />
+            </div>
+        </div>
+        
+
+        <div class="slide" id="slide-4">
+            <div class="slide-header">
+                <span>UIET, Panjab University — Major Project Defense</span>
+                <span>Slide 4 of 16</span>
+            </div>
+            <div class="slide-content">
+                <h2>SLIDE 4: FPGA PROGRAMMABLE LOGIC (PL) RTL DESIGN</h2>
+<h3>Visual Layout:</h3>
+<ul>
+<li>Three sub-diagrams:</li>
+<li>Arithmetic shift-and-add tree for RGB2Gray.</li>
+<li>Circular 2-line BRAM buffer structure showing 9-tap stencil extraction.</li>
+<li>Multiplierless Sobel L1-norm pipeline.</li>
+</ul>
+<h3>Core Bullet Points:</h3>
+<ul>
+<li><strong>Fixed-Point RGB-to-Grayscale (<code>axis_rgb2gray.v</code>)</strong>:</li>
+<li>Formulated as $Y = (77R + 150G + 29B) \gg 8$, scaling ITU-R BT.601 coefficients by $2^8 = 256$.</li>
+<li>Synthesized purely with adder trees; <strong>zero multipliers, zero DSP slices consumed</strong>.</li>
+<li><strong>Dual-Line 2D Stencil Buffer (<code>line_buffer_3x3.v</code>)</strong>:</li>
+<li>Stores two 640-pixel rows in internal Block RAM ($10.24\text{ Kb}$ memory footprint, $&lt; 35\%$ of a single 36 Kb BRAM tile).</li>
+<li>Feeds a $3 \times 3$ register window, generating all 9 spatial neighbors simultaneously on every clock cycle with zero DDR memory stalls.</li>
+<li><strong>Multiplierless Sobel Filter (<code>axis_sobel_edge.v</code>)</strong>:</li>
+<li>Convolution by $\pm 2$ replaced by 1-bit arithmetic left shift (<code>&lt;&lt; 1</code>).</li>
+<li>Implements Manhattan Distance L1-Norm ($|G| = |G_x| + |G_y|$) with 2's complement absolute value logic.</li>
+<li>Strict dynamic comparator (<code>mag_sat &gt; cfg_threshold</code>).</li>
+</ul>
+<h3>Speaker Notes:</h3>
+<blockquote>
+<p>"On the FPGA fabric, we engineered three custom synthesizable Verilog modules. In the color converter, we scaled luminance math by 256, allowing full integer pipelining with zero DSP blocks. To solve the 2D spatial convolution bottleneck, we designed a circular line buffer using on-chip BRAM that outputs all 9 neighborhood pixels on every clock cycle. The Sobel filter uses shift-and-add math and an L1-norm Manhattan distance, achieving full spatial filtering in a single clock cycle."</p>
+</blockquote>
+<hr />
+            </div>
+        </div>
+        
+
+        <div class="slide" id="slide-5">
+            <div class="slide-header">
+                <span>UIET, Panjab University — Major Project Defense</span>
+                <span>Slide 5 of 16</span>
+            </div>
+            <div class="slide-content">
+                <h2>SLIDE 5: HARDWARE VERIFICATION &amp; ZERO-DEFECT BIT ACCURACY</h2>
+<h3>Visual Layout:</h3>
+<ul>
+<li>Diagnostic image comparing Verilog simulation output against OpenCV software output.</li>
+<li>Difference image showing complete zero error across 228,404 pixels.</li>
+<li>Callout highlighting the resolution of the strict inequality comparator bug.</li>
+</ul>
+<h3>Core Bullet Points:</h3>
+<ul>
+<li><strong>Rigorous Co-Simulation Verification</strong>:</li>
+<li>Validated using a cycle-accurate Python/Verilog verification harness across all 100 benchmark video frames.</li>
+<li>Evaluated across <strong>228,404 continuous streaming pixels</strong>.</li>
+<li><strong>100.0000% Exact Bit-Accuracy</strong>:</li>
+<li><strong>Zero pixel discrepancies</strong> ($0 / 228,404$ mismatches).</li>
+<li>Maximum LSB Error = $0$.</li>
+<li><strong>The Critical Comparator Finding</strong>:</li>
+<li>Identified that OpenCV's <code>cv2.THRESH_BINARY</code> uses strict inequality (<code>src &gt; thresh</code>), whereas initial RTL used <code>&gt;=</code>.</li>
+<li>Updating the RTL comparator to <code>mag_sat &gt; cfg_threshold</code> achieved complete mathematical equivalence with the software reference model.</li>
+</ul>
+<h3>Speaker Notes:</h3>
+<blockquote>
+<p>"A core tenet of our methodology was absolute hardware-software verification. We compared the cycle-accurate output of our Verilog RTL against OpenCV across 228,404 pixels. We discovered and fixed a subtle bug where OpenCV uses a strict greater-than comparator, whereas typical Verilog uses greater-than-or-equal-to. Once aligned, our hardware accelerator achieved 100.0000% exact bit-level equivalence with zero arithmetic error."</p>
+</blockquote>
+<hr />
+            </div>
+        </div>
+        
+
+        <div class="slide" id="slide-6">
+            <div class="slide-header">
+                <span>UIET, Panjab University — Major Project Defense</span>
+                <span>Slide 6 of 16</span>
+            </div>
+            <div class="slide-content">
+                <h2>SLIDE 6: POLYNOMIAL CURVE FITTING &amp; CONFIDENCE SCORING ($Q$)</h2>
+<h3>Visual Layout:</h3>
+<ul>
+<li>Flowchart of the 9-window histogram sliding search.</li>
+<li>The Confidence Score formulation box showing weights $w_C = 0.40, w_E = 0.35, w_G = 0.25$.</li>
+<li>Graphical plots of fitted parabolic curves ($x = ay^2 + by + c$).</li>
+</ul>
+<h3>Core Bullet Points:</h3>
+<ul>
+<li><strong>9-Window Sliding Histogram Search</strong>:</li>
+<li>Bins edge pixels into vertical columns across lower ROI to locate left and right base centroids.</li>
+<li>9 sliding vertical windows ($\Delta y = 40\text{ px}$) dynamically re-center on active pixel clusters.</li>
+<li><strong>2nd-Order Parabolic Model</strong>:</li>
+<li>Fits $x_L(y) = a_Ly^2 + b_Ly + c_L$ and $x_R(y) = a_Ry^2 + b_Ry + c_R$.</li>
+<li>Captures road curvature ($a$), vehicle heading angle ($b$), and lateral lane offset ($c$).</li>
+<li><strong>Multi-Metric Confidence Score ($Q \in [0, 1]$)</strong>:
+  $$Q = 0.40 \cdot C + 0.35 \cdot E + 0.25 \cdot G$$</li>
+<li><strong>$C$ (Coverage)</strong>: Fraction of active sliding windows ($N_{\text{active}} / 9$).</li>
+<li><strong>$E$ (Edge Strength)</strong>: Normalized mean gradient intensity ($\overline{|G|} / 180$).</li>
+<li><strong>$G$ (Geometric Plausibility)</strong>: $R^2$ fit quality, lane width consistency, and curvature parity.</li>
+</ul>
+<h3>Speaker Notes:</h3>
+<blockquote>
+<p>"On the ARM processing system, binary edge pixels undergo a 9-window sliding histogram search to fit second-order parabolic curves. But rather than blindly trusting the fit, we introduce our novel Confidence Metric, Q. Q dynamically weights pixel coverage, edge gradient strength, and geometric physical plausibility into a single score between 0 and 1. This score tells the system exactly how trustworthy the road markings are at any given millisecond."</p>
+</blockquote>
+<hr />
+            </div>
+        </div>
+        
+
+        <div class="slide" id="slide-7">
+            <div class="slide-header">
+                <span>UIET, Panjab University — Major Project Defense</span>
+                <span>Slide 7 of 16</span>
+            </div>
+            <div class="slide-content">
+                <h2>SLIDE 7: CLOSED-LOOP DYNAMIC THRESHOLD FEEDBACK</h2>
+<h3>Visual Layout:</h3>
+<ul>
+<li>Feedback control loop diagram:
+  $Q \to \text{Error} \to \text{Target } T \to \text{IIR Filter } (\beta = 0.35) \to \text{AXI-Lite } (0x43C00010) \to \text{PL Sobel}$.</li>
+<li>Line graph showing dynamic threshold adapting from 50 up to 71 in nominal conditions and down to 29 in faded conditions.</li>
+</ul>
+<h3>Core Bullet Points:</h3>
+<ul>
+<li><strong>Eliminating Static Threshold Vulnerability</strong>:</li>
+<li>Static thresholds ($T=50$) fail when lighting or paint quality changes.</li>
+<li><strong>Negative Feedback Control Law</strong>:
+  $$T_{\text{target}} = \text{round}\left( 50 + 45 \cdot (0.70 - Q) \right)$$</li>
+<li>Faded paint ($Q \approx 0.35$) $\implies$ Lowers threshold to recover faint edges.</li>
+<li>Bright sun &amp; shadow clutter ($Q &gt; 0.75$) $\implies$ Raises threshold to suppress asphalt texture noise.</li>
+<li><strong>Infinite Impulse Response (IIR) Damping</strong>:
+  $$T_{\text{ctrl}}^{(t)} = \text{round}\left( 0.35 \cdot T_{\text{target}}^{(t)} + 0.65 \cdot T_{\text{ctrl}}^{(t-1)} \right)$$</li>
+<li>$\beta = 0.35$ dampens high-frequency frame jitter, settling smoothly in 3–4 frames ($\approx 100\text{ ms}$).</li>
+<li>Transmitted to PL over AXI4-Lite during vertical blanking intervals.</li>
+</ul>
+<h3>Speaker Notes:</h3>
+<blockquote>
+<p>"Here is our closed-loop innovation: instead of locking the FPGA threshold at 50, the ARM processor uses Q in a proportional control law to calculate an optimal target threshold. To prevent rapid flickering under tree shadows, we apply an IIR damping filter with beta = 0.35. The filtered 8-bit threshold is written directly into the FPGA's AXI-Lite register once per frame, creating an intelligent, self-tuning hardware vision sensor."</p>
+</blockquote>
+<hr />
+            </div>
+        </div>
+        
+
+        <div class="slide" id="slide-8">
+            <div class="slide-header">
+                <span>UIET, Panjab University — Major Project Defense</span>
+                <span>Slide 8 of 16</span>
+            </div>
+            <div class="slide-content">
+                <h2>SLIDE 8: VIRTUAL-LANE FALLBACK FOR UNMARKED RURAL ROADS</h2>
+<h3>Visual Layout:</h3>
+<ul>
+<li>Visual comparison showing:</li>
+<li>Input unpainted rural road;</li>
+<li>Bottom-center HSV road seed sampling box;</li>
+<li>Segmented road mask ($k = 2.4\sigma$);</li>
+<li>Projected synthetic green virtual lane boundaries.</li>
+</ul>
+<h3>Core Bullet Points:</h3>
+<ul>
+<li><strong>The Rural Reality</strong>:</li>
+<li>Millions of kilometers of Indian rural roads have zero painted markings ($Q &lt; 0.45$).</li>
+<li><strong>Dual-Threshold Temporal Hysteresis</strong>:</li>
+<li>5 consecutive bad frames ($Q &lt; 0.45$) to engage fallback; 3 good frames ($Q \ge 0.50$) to exit, eliminating mode chattering.</li>
+<li><strong>Bottom-Center HSV Road Seed Extraction</strong>:</li>
+<li>Samples clean asphalt directly in front of the vehicle hood ($x \in [0.40W, 0.60W], y \in [0.88H, 0.98H]$).</li>
+<li>Computes statistical color mean $\boldsymbol{\mu}$ and standard deviation $\boldsymbol{\sigma}$.</li>
+<li>Segments drivable asphalt: $|\mathbf{I}_{\text{HSV}} - \boldsymbol{\mu}| \le 2.4 \cdot \boldsymbol{\sigma}$.</li>
+<li><strong>Shoulder Boundary Projection</strong>:</li>
+<li>Scans outward to detect dirt/gravel shoulders, fits linear shoulder models ($x = my + c$), and projects synthetic safe trajectory lines at standard vehicle width ($3.2\text{ m}$).</li>
+</ul>
+<h3>Speaker Notes:</h3>
+<blockquote>
+<p>"What happens when the road has no markings at all? Standard systems throw an error. In our pipeline, when Q drops below 0.45 for 5 frames, we enter Virtual-Lane Fallback. We extract an HSV color seed from directly in front of the vehicle hood, segment the drivable asphalt texture from the unpaved shoulders, and project synthetic virtual lane guides. This maintains 100% steering guidance continuity on rural roads."</p>
+</blockquote>
+<hr />
+            </div>
+        </div>
+        
+
+        <div class="slide" id="slide-9">
+            <div class="slide-header">
+                <span>UIET, Panjab University — Major Project Defense</span>
+                <span>Slide 9 of 16</span>
+            </div>
+            <div class="slide-content">
+                <h2>SLIDE 9: INTEGRATED SPEED-BREAKER HAZARD WARNING</h2>
+<h3>Visual Layout:</h3>
+<ul>
+<li>Image showing speed breaker detection overlay on the vehicle HUD.</li>
+<li>Morphological candidate filter diagram: Horizontal Sobel $\to 1 \times 21$ Closing $\to$ Multi-Stripe Repetition Check.</li>
+</ul>
+<h3>Core Bullet Points:</h3>
+<ul>
+<li><strong>Repurposing PL Hardware Gradients</strong>:</li>
+<li>Leverages existing horizontal Sobel gradients ($G_y$) already computed by the FPGA accelerator with zero extra hardware cost.</li>
+<li><strong>Three-Stage Validation Pipeline</strong>:</li>
+<li><strong>Horizontal Dominance</strong>: Isolates pixels where $|G_y| &gt; 1.25|G_x| \land |G_y| &gt; 60$ (rejects vertical lane paint and longitudinal tree shadows).</li>
+<li><strong>Morphological Closing</strong>: Uses a $1 \times 21$ horizontal structuring element to connect dashed yellow/white speed breaker stripes.</li>
+<li><strong>Multi-Band Stripe Repetition</strong>: Validates $2\text{ to }5$ parallel horizontal stripes spaced at $\Delta y \in [8, 50]\text{ px}$.</li>
+<li><strong>Zebra Crossing Rejection</strong>:</li>
+<li>Counts vertical edge transitions across the bar; candidates with $&gt; 6$ vertical edges are flagged as pedestrian zebra crossings and rejected.</li>
+<li><strong>Driver Warning</strong>:</li>
+<li>Displays a flashing HUD warning: <code>SPEED BREAKER AHEAD - SLOW DOWN</code> at $\ge 15\text{ meters}$ range.</li>
+</ul>
+<h3>Speaker Notes:</h3>
+<blockquote>
+<p>"Unmarked speed breakers represent a severe hazard on Indian roads. Rather than adding extra sensors, we efficiently repurpose the horizontal Sobel gradients already generated by the FPGA. By filtering for horizontal dominance, applying horizontal morphology, and verifying multi-band stripe repetition, the system reliably detects speed breakers 15 meters ahead while rejecting shadows and pedestrian zebra crossings."</p>
+</blockquote>
+<hr />
+            </div>
+        </div>
+        
+
+        <div class="slide" id="slide-10">
+            <div class="slide-header">
+                <span>UIET, Panjab University — Major Project Defense</span>
+                <span>Slide 10 of 16</span>
+            </div>
+            <div class="slide-content">
+                <h2>SLIDE 10: EXPERIMENTAL BENCHMARK: LATENCY &amp; THROUGHPUT</h2>
+<h3>Visual Layout:</h3>
+<ul>
+<li>Bar chart comparing CPU baseline latency ($33.8\text{ ms}$) vs. PYNQ-Z2 PS-PL latency ($19.2\text{ ms}$).</li>
+<li>Speedup callout box ($3.25\times$ preprocessing speedup, $52.1\text{ FPS}$ sustained throughput).</li>
+</ul>
+<h3>Core Bullet Points:</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Processing Stage</th>
+<th style="text-align: left;">CPU Baseline (ms)</th>
+<th style="text-align: left;">PYNQ-Z2 PS-PL (ms)</th>
+<th style="text-align: left;">Speedup Factor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>RGB2Gray + Sobel Preprocessing</strong></td>
+<td style="text-align: left;">$10.55\text{ ms}$</td>
+<td style="text-align: left;"><strong>$3.25\text{ ms}$</strong> (PL + DMA)</td>
+<td style="text-align: left;"><strong>$3.25\times$ Speedup</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Sliding Window &amp; Curve Fitting</strong></td>
+<td style="text-align: left;">$3.61\text{ ms}$</td>
+<td style="text-align: left;">$3.61\text{ ms}$ (PS ARM A9)</td>
+<td style="text-align: left;">$1.00\times$</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Confidence Scoring ($Q$)</strong></td>
+<td style="text-align: left;">$9.71\text{ ms}$</td>
+<td style="text-align: left;">$4.37\text{ ms}$ (PS + HW Cnt)</td>
+<td style="text-align: left;"><strong>$2.22\times$</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Speed-Breaker Analysis</strong></td>
+<td style="text-align: left;">$4.62\text{ ms}$</td>
+<td style="text-align: left;">$2.31\text{ ms}$ (PS reuses PL $G_y$)</td>
+<td style="text-align: left;"><strong>$2.00\times$</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Overlay &amp; Display</strong></td>
+<td style="text-align: left;">$5.64\text{ ms}$</td>
+<td style="text-align: left;">$5.64\text{ ms}$</td>
+<td style="text-align: left;">$1.00\times$</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Total System Latency</strong></td>
+<td style="text-align: left;"><strong>$33.83\text{ ms}$</strong></td>
+<td style="text-align: left;"><strong>$19.18\text{ ms}$</strong></td>
+<td style="text-align: left;"><strong>$1.76\times$ System Gain</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Sustained Frame Rate</strong></td>
+<td style="text-align: left;"><strong>$30.8\text{ FPS}$</strong></td>
+<td style="text-align: left;"><strong>$52.1\text{ FPS}$</strong></td>
+<td style="text-align: left;"><strong>$+69.2\%$ Throughput</strong></td>
+</tr>
+</tbody>
+</table>
+<h3>Speaker Notes:</h3>
+<blockquote>
+<p>"Looking at our empirical benchmarks, CPU preprocessing took 10.55 ms per frame—over 31% of the entire CPU budget. On an embedded ARM core without an FPGA, this latency would balloon beyond 90 ms. Our PL accelerator completes full edge extraction in just 2.30 ms, or 3.25 ms including DMA transfers. This slashes end-to-end latency to 19.18 ms, unlocking a throughput of 52.1 FPS—far exceeding our 30 FPS automotive requirement."</p>
+</blockquote>
+<hr />
+            </div>
+        </div>
+        
+
+        <div class="slide" id="slide-11">
+            <div class="slide-header">
+                <span>UIET, Panjab University — Major Project Defense</span>
+                <span>Slide 11 of 16</span>
+            </div>
+            <div class="slide-content">
+                <h2>SLIDE 11: ABLATION STUDY: ADAPTIVE PIPELINE VS. FIXED BASELINE</h2>
+<h3>Visual Layout:</h3>
+<ul>
+<li>Dual-line graph showing Confidence Score $Q$ and threshold $T$ responding over 100 frames across 4 road conditions.</li>
+<li>Horizontal bar chart showing operational mode distribution.</li>
+</ul>
+<h3>Core Bullet Points:</h3>
+<ul>
+<li><strong>Segment 1 (Nominal Highway, Frames 1–25)</strong>:</li>
+<li>Both systems achieved $100\%$ tracking ($25/25$ frames); adaptive threshold settled at $T=68.4$ to suppress asphalt grain.</li>
+<li><strong>Segment 2 (Faded Markings &amp; Glare, Frames 26–50)</strong>:</li>
+<li>Fixed baseline failed on $68\%$ of frames due to shadow bloom.</li>
+<li>Adaptive system lowered threshold to recover markings and correctly triggered <strong>$19$ speed-breaker warnings</strong>.</li>
+<li><strong>Segment 3 (Unmarked Rural Road, Frames 51–75)</strong>:</li>
+<li>Fixed baseline suffered <strong>total failure</strong>, hallucinating noise lines.</li>
+<li>Adaptive system engaged <strong>Virtual-Lane Fallback for all 25 frames ($100\%$ continuity)</strong>.</li>
+<li><strong>Overall State Distribution</strong>:</li>
+<li>$53\%$ Visible Lane, $25\%$ Virtual Fallback, $22\%$ Fail-Safe (<code>LANE_UNAVAILABLE</code>).</li>
+</ul>
+<h3>Speaker Notes:</h3>
+<blockquote>
+<p>"In our ablation study across 100 diverse road frames, the standard fixed-threshold detector failed silently on 47% of challenging frames, hallucinating false lane trajectories. In contrast, our adaptive system maintained 100% valid guidance throughout. When the road was unpainted, it switched smoothly to Virtual-Lane Fallback. When conditions were degraded beyond safe limits, it safely asserted Lane Unavailable, alerting the driver to resume manual control."</p>
+</blockquote>
+<hr />
+            </div>
+        </div>
+        
+
+        <div class="slide" id="slide-12">
+            <div class="slide-header">
+                <span>UIET, Panjab University — Major Project Defense</span>
+                <span>Slide 12 of 16</span>
+            </div>
+            <div class="slide-content">
+                <h2>SLIDE 12: HARDWARE RESOURCE UTILIZATION &amp; POWER EFFICIENCY</h2>
+<h3>Visual Layout:</h3>
+<ul>
+<li>FPGA chip floorplan diagram and resource utilization donut charts.</li>
+<li>Power comparison bar chart: PYNQ-Z2 ($&lt; 2.8\text{ W}$) vs. Jetson Nano ($10\text{ W}$) vs. Jetson Orin ($25\text{ W}$).</li>
+</ul>
+<h3>Core Bullet Points:</h3>
+<ul>
+<li><strong>Resource Utilization on XC7Z020 FPGA Fabric</strong>:</li>
+<li><strong>LUTs</strong>: $1,184$ ($2.22\%$ for accelerator core; $4,210$ / $7.91\%$ for full block design).</li>
+<li><strong>Flip-Flops</strong>: $1,420$ ($1.33\%$ for core; $5,680$ / $5.34\%$ for full design).</li>
+<li><strong>Block RAM (36 Kb)</strong>: $1.0$ tile for line buffers ($0.71\%$); $4.5$ tiles ($3.21\%$) for DMA.</li>
+<li><strong>DSP48E1 Slices</strong>: <strong>0 out of 220 (0.00%)</strong> utilized!</li>
+<li><strong>Over $90\%$ Fabric Headroom Available</strong> for future ADAS expansion.</li>
+<li><strong>Estimated Board Power Consumption</strong>:</li>
+<li>Total Power: <strong>$&lt; 2.80\text{ Watts}$</strong> (PS: $1.53\text{ W}$, PL Dynamic: $0.28\text{ W}$, Peripherals: $0.85\text{ W}$).</li>
+<li>Achieves <strong>$&gt; 3.5\times$ to $9\times$ lower power</strong> than commercial embedded GPU platforms with passive cooling.</li>
+</ul>
+<h3>Speaker Notes:</h3>
+<blockquote>
+<p>"On the AMD Xilinx XC7Z020 chip, our accelerator core consumes just 1,184 LUTs and exactly zero DSP slices, thanks to our multiplierless fixed-point architecture. Less than 8% of the chip's total logic is used, leaving 90% of the fabric available for future expansions such as neural network accelerators. Most importantly, total board power is under 2.8 Watts—less than one-third the power of a Jetson Nano, enabling passive cooling in sealed automotive enclosures."</p>
+</blockquote>
+<hr />
+            </div>
+        </div>
+        
+
+        <div class="slide" id="slide-13">
+            <div class="slide-header">
+                <span>UIET, Panjab University — Major Project Defense</span>
+                <span>Slide 13 of 16</span>
+            </div>
+            <div class="slide-content">
+                <h2>SLIDE 13: DEMONSTRATION &amp; REAL-TIME HUD TELEMETRY</h2>
+<h3>Visual Layout:</h3>
+<ul>
+<li>Annotated screenshot of the final Heads-Up Display (HUD) showing:</li>
+<li>Green/Blue polynomial lane boundary overlay;</li>
+<li>Lateral offset readout ($\Delta x = +0.12\text{ m}$);</li>
+<li>Dynamic threshold indicator ($T_{\text{ctrl}} = 68$);</li>
+<li>Real-time confidence score gauge ($Q = 0.67$);</li>
+<li>Speed breaker flashing indicator.</li>
+</ul>
+<h3>Core Bullet Points:</h3>
+<ul>
+<li><strong>Comprehensive Heads-Up Display (HUD)</strong>:</li>
+<li>Real-time projection of detected road lane boundaries directly over the input video stream.</li>
+<li>Telemetry readouts: Instantaneous FPS, Latency, Confidence Score ($Q$), Operational State, and Lateral Deviation.</li>
+<li><strong>Autonomous Warning Triggers</strong>:</li>
+<li><strong>Lane Departure Warning (LDW)</strong>: Triggered if vehicle lateral deviation $|\Delta x| &gt; 0.40\text{ m}$.</li>
+<li><strong>Virtual Fallback Indicator</strong>: Amber overlay indicating guidance based on road shoulder geometry.</li>
+<li><strong>Speed-Breaker Hazard Alert</strong>: Flashing red banner alerting driver of upcoming pavement humps.</li>
+<li><strong>Fail-Safe Mode</strong>: Yellow warning commanding driver intervention when road boundaries are indeterminate.</li>
+</ul>
+<h3>Speaker Notes:</h3>
+<blockquote>
+<p>"This slide illustrates our live Heads-Up Display output. The driver is presented with an intuitive augmented overlay showing the fitted lane boundaries, instantaneous lateral offset in meters, real-time FPS, and confidence score. When an unannounced speed breaker is detected, a prominent warning alert is displayed, giving the driver ample time to brake smoothly."</p>
+</blockquote>
+<hr />
+            </div>
+        </div>
+        
+
+        <div class="slide" id="slide-14">
+            <div class="slide-header">
+                <span>UIET, Panjab University — Major Project Defense</span>
+                <span>Slide 14 of 16</span>
+            </div>
+            <div class="slide-content">
+                <h2>SLIDE 14: LIMITATIONS &amp; ENVIRONMENTAL CORNER CASES</h2>
+<h3>Visual Layout:</h3>
+<ul>
+<li>Three callout warning boxes illustrating environmental corner cases:</li>
+<li>Monsoonal downpours with standing water specular reflections;</li>
+<li>Unlit rural roads with oncoming high-beam glare;</li>
+<li>Indistinct dirt tracks with zero asphalt-shoulder contrast.</li>
+</ul>
+<h3>Core Bullet Points:</h3>
+<ul>
+<li><strong>Monsoonal Rain &amp; Water Specularity</strong>:</li>
+<li>Standing puddles create mirror-like reflections of vehicle headlights, introducing localized gradient noise.</li>
+<li><strong>Nighttime Unlit Highways &amp; High-Beam Blooming</strong>:</li>
+<li>Sharp headlight illumination falloff limits optical range to $\approx 30\text{ m}$; oncoming high-beams cause localized CMOS sensor saturation.</li>
+<li><strong>Kutcha (Dirt) Roads with Indistinct Shoulders</strong>:</li>
+<li>When asphalt transitions into dirt of identical color ($\Delta \mu_{\text{HSV}} \approx 0$), color seed segmentation cannot extract a clear boundary.</li>
+<li><strong>Fail-Safe Design Response</strong>:</li>
+<li>The system detects low confidence ($Q &lt; 0.20$), rejects false boundaries, and smoothly asserts <code>LANE_UNAVAILABLE</code> rather than hallucinating an unsafe steering path.</li>
+</ul>
+<h3>Speaker Notes:</h3>
+<blockquote>
+<p>"Engineering integrity requires discussing limitations. Extreme monsoonal rainfall creates puddles that reflect headlights, and oncoming high-beams at night cause localized sensor blooming. On dirt roads where the road surface and shoulder are the same color, color segmentation reaches its limit. Crucially, in all these cases, our system recognizes its own low confidence and safely asserts Lane Unavailable, preventing unsafe automated steering."</p>
+</blockquote>
+<hr />
+            </div>
+        </div>
+        
+
+        <div class="slide" id="slide-15">
+            <div class="slide-header">
+                <span>UIET, Panjab University — Major Project Defense</span>
+                <span>Slide 15 of 16</span>
+            </div>
+            <div class="slide-content">
+                <h2>SLIDE 15: CONCLUSION &amp; ROADMAP FOR FUTURE WORK</h2>
+<h3>Visual Layout:</h3>
+<ul>
+<li>Summary checklist of project achievements.</li>
+<li>Future roadmap diagram showing Automotive ASIC migration and mmWave Radar sensor fusion.</li>
+</ul>
+<h3>Core Bullet Points:</h3>
+<ul>
+<li><strong>Summary of Key Contributions</strong>:</li>
+<li>Designed, synthesized, and verified an FPGA-accelerated ADAS pipeline achieving <strong>$100.0000\%$ bit-level accuracy</strong>.</li>
+<li>Demonstrated a <strong>$3.25\times$ preprocessing speedup</strong> and sustained <strong>$52.1\text{ FPS}$</strong> at <strong>$&lt; 2.8\text{ W}$</strong> on PYNQ-Z2.</li>
+<li>Pioneered closed-loop dynamic threshold feedback ($T_{\text{ctrl}} \in [25, 95]$) and Virtual-Lane Fallback for Indian roads.</li>
+<li><strong>Roadmap for Future Research</strong>:</li>
+<li><strong>Automotive ASIC Realization</strong>: Synthesized on a TSMC 28nm CMOS node ($&lt; 0.35\text{ mm}^2$ area, $&lt; 85\text{ mW}$ power, unit cost $&lt; \$2.50$).</li>
+<li><strong>Multi-Modal Sensor Fusion</strong>: Couple vision pipeline with 77 GHz mmWave automotive radar for all-weather resilience.</li>
+<li><strong>High-Resolution Scaling</strong>: Migrate to AMD Xilinx Zynq UltraScale+ MPSoC for Full HD $1080\text{p}$ @ 120 FPS.</li>
+<li><strong>CAN Bus Integration</strong>: Transmit lateral steering commands over automotive CAN/LIN bus.</li>
+</ul>
+<h3>Speaker Notes:</h3>
+<blockquote>
+<p>"To conclude, this capstone project demonstrates that low-power FPGA hardware acceleration, combined with intelligent closed-loop confidence feedback and virtual fallback, provides a practical, robust, and cost-effective solution for ADAS on challenging Indian roads. In the future, this RTL can be fabricated as a sub-dollar automotive ASIC or fused with automotive mmWave radar for all-weather driving safety. Thank you, and we now welcome questions from the examination committee."</p>
+</blockquote>
+<hr />
+            </div>
+        </div>
+        
+
+        <div class="slide" id="slide-16">
+            <div class="slide-header">
+                <span>UIET, Panjab University — Major Project Defense</span>
+                <span>Slide 16 of 16</span>
+            </div>
+            <div class="slide-content">
+                <h2>SLIDE 16: BACKUP SLIDES: ANTICIPATED VIVA QUESTIONS &amp; DEFENSE MATRIX</h2>
+<h3>Visual Layout:</h3>
+<ul>
+<li>Quick reference index of technical defense topics:</li>
+<li>BRAM line buffer depth derivation;</li>
+<li>Integer fixed-point scaling ($77, 150, 29$);</li>
+<li>L1-norm vs. L2-norm error bounds;</li>
+<li>Simple vs. Scatter-Gather DMA mode;</li>
+<li>IIR filter stability and $\beta = 0.35$ settling time.</li>
+</ul>
+<h3>Core Bullet Points:</h3>
+<ul>
+<li><strong>Ready References for Examiner Inquiries</strong>:</li>
+<li><em>Why zero DSPs?</em> $\implies$ Power-of-two arithmetic decomposition on integer coefficients.</li>
+<li><em>Why not a Raspberry Pi?</em> $\implies$ Clock-cycle deterministic latency ($2.304\text{ ms}$) vs. Linux kernel scheduling jitter ($&gt; 50\text{ ms}$).</li>
+<li><em>Why not a GPU?</em> $\implies$ Sub-3 Watt passive cooling vs. 25–40 W thermal dissipation in sealed automotive dashboards.</li>
+<li><em>How is ISO 26262 handled?</em> $\implies$ Deterministic fail-safe state machine prevents silent lane hallucination.</li>
+</ul>
+<h3>Speaker Notes:</h3>
+<blockquote>
+<p>"We have prepared detailed architectural backups covering our line buffer memory sizing, fixed-point rounding proofs, AXI DMA cache-coherency handshakes, and IIR control stability proofs. We are ready for your questions."</p>
+</blockquote>
+            </div>
+        </div>
+        
+</body>
+</html>

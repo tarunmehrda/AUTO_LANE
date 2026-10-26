@@ -1,0 +1,28 @@
+{
+    "dataset_frames": 100,
+    "resolution": "640x360",
+    "cpu_baseline": {
+        "mean_latency_ms": 33.82638499962923,
+        "mean_fps": 30.82635507767513,
+        "preprocessing_ms": 10.55283799978497,
+        "polynomial_fit_ms": 3.6131239998940146,
+        "confidence_score_ms": 9.707264000244322,
+        "speed_breaker_ms": 4.623031999508385,
+        "overlay_ms": 5.637558999660541
+    },
+    "fpga_projected": {
+        "pl_preprocessing_ms": 3.25,
+        "dma_overhead_ms": 0.95,
+        "raw_pl_compute_ms": 2.304,
+        "total_latency_ms": 19.180467799418693,
+        "projected_fps": 52.13637177453551,
+        "preprocessing_speedup": 3.247027076856914
+    },
+    "functional_metrics": {
+        "visible_lane_frames": 53,
+        "virtual_fallback_frames": 25,
+        "fail_safe_frames": 22,
+        "speed_breaker_alerts_triggered": 19,
+        "hardware_bit_accuracy_percent": 100.0
+    }
+}

@@ -1,0 +1,10 @@
+# Core computer vision & matrix operations
+opencv-python>=4.8.0
+numpy>=1.24.0
+matplotlib>=3.7.0
+
+# Optional utilities for evaluation and packaging
+tqdm>=4.65.0
+
+# Regression tests for the real-time CPU tracker
+pytest>=8.0.0
